@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GDF - Generador de Documentos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/static/css/bulma.min.css" >
+<link rel="stylesheet" type="text/css" href="/static/css/app.css" >
+<link rel="stylesheet" type="text/css" href="/static/css/sweetalert.css" >
+<link rel="stylesheet" type="text/css" href="/static/css/snackbar.css" >
+<link rel="stylesheet" type="text/css" href="/static/css/datepicker.css" >
+<link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"> 
+</head>
+<body>
+	<section class="section">
+		<div class="container">
+			<div class="columns">
+				<div class="column">
+					<div class="">
+						<img src="static/img/logo.jpg" />
+						<!--input type="text" class="input" data-toggle="datepicker" name="date" placeholder="Pick a date" autocomplete="off"-->
+					</div>
+					<div class="field">
+						<div class="select">
+							<select id="documents">
+								<option value="" selected>Seleccione un documento</option>
+							</select>
+						</div>
+					</div>
+					<div id="pdf-actions">
+						<div class="field" id="pdf-meta">
+							<div id="pdf-buttons">
+								<button class="button is-info is-outlined" id="pdf-prev">
+									<span class="icon">
+										<span class="fa fa-chevron-left"></span>
+									</span>
+								</button>
+								<button class="button is-info is-outlined" id="pdf-next">
+									<span class="icon">
+										<span class="fa fa-chevron-right"></span>
+									</span>
+								</button>
+							</div>
+							<div class="button is-text" id="page-count-container">
+								<span>Página</span>&nbsp;<span id="pdf-current-page"></span>&nbsp;
+								<span>de</span>&nbsp;<span id="pdf-total-pages"></span>&nbsp;
+							</div>
+						</div>
+						<div class="field">
+							<button class="button is-info" id="pdf-download">
+								<span class="icon">
+									<span class="fa fa-download"></span>
+								</span>
+								<span>Descargar</span>
+							</button> 
+							<button class="button is-info">
+								<span class="icon">
+									<span class="fa fa-envelope"></span>
+								</span>
+								<span>Enviar</span>
+							</button> 
+							<!--input type="file" id="file-to-upload" accept="application/pdf" /-->
+						</div>
+					</div>
+				</div>
+				<div class="column">
+
+					<div id="pdf-main-container">
+						<div class="notification" id="pdf-loader">Cargando documento ...</div>
+						<div id="pdf-contents">
+							<canvas id="pdf-canvas" width="400"></canvas>
+							<div class="notification" id="page-loader">Cargando página ...</div>
+							<!--a id="download-image" href="#">Download PNG</a-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="ui-snackbar ui-snackbar--is-inactive">
+		<p class="ui-snackbar__message"></p>
+	</div>
+
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/datepicker.js"></script>
+	<script src="/static/js/fontawesome_all.js"></script>
+	<script src="/static/js/sweetalert.min.js"></script>
+	<script src="/static/js/pdf.js"></script>
+	<script src="/static/js/pdf.worker.js"></script>
+	<script src="/static/js/app.js"></script>
+</body>
+</html>
