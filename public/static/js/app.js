@@ -126,7 +126,6 @@ $(function(){
 						name: 'empresa',
 						title: 'Nombre de la empresa',
 						placeholder: 'Empresa',
-						value: "CARTON MOJADO S.A.", // BORAR
 						x: 27,
 						y: 55,
 						width: 60,
@@ -138,7 +137,6 @@ $(function(){
 					{
 						name: 'importe',
 						title: 'Importe a bonificar',
-						value: "€1420,00", // BORAR
 						placeholder: '€420,00',
 						x: 35,
 						y: 59.5,
@@ -154,7 +152,6 @@ $(function(){
 						//regexp: '/^[679]{1}[0-9]{8}$/',
 						/*/^\+(?:[0-9] ?){6,14}[0-9]$/*/
 						options: __CALENDAR_MONTH,
-						value: "Febrero", // BORAR
 						x: 43,
 						y: 64,
 						pdfi : {
@@ -166,7 +163,6 @@ $(function(){
 						name: 'mes_pagadero',
 						title: 'Mes pagadero',
 						options: __CALENDAR_MONTH,
-						value: "Diciembre", // BORAR
 						x: 70,
 						y: 64,
 						pdfi : {
@@ -195,7 +191,6 @@ $(function(){
 						name:'tipo_formacion',
 						title: 'Tipo de formación',
 						options: __TIPO_FORMACION,
-						value: "93 866 35 23", // BORAR
 						placeholder: '93 866 35 23',
 						x: 30,
 						y: 26,
@@ -209,7 +204,6 @@ $(function(){
 						name:'alumno',
 						title: 'Nombre del alumno. Si son varios separados por coma.',
 						placeholder: 'Nombre del alumno. Si son varios separados por coma.',
-						value: "JOSE BARREIRO \nLUIS TARDÍO", // BORAR
 						multiline: true,
 						x: 24,
 						y: 30.5,
@@ -281,7 +275,6 @@ $(function(){
 					{
 						name: 'grupo',
 						title: 'Nro. de grupo',
-						value: "0054", // BORAR
 						placeholder: '0054',
 						x: 69,
 						y: 60.5,
@@ -308,7 +301,6 @@ $(function(){
 						name: 'dia',
 						title: 'Día',
 						options: __CALENDAR_DAY,
-						value: "2020", // BORAR
 						x: 45,
 						y: 69,
 						width: 13,
@@ -321,7 +313,6 @@ $(function(){
 						name: 'dia',
 						title: 'Día',
 						options: __CALENDAR_MONTH,
-						value: "Octubre", // BORAR
 						x: 59,
 						y: 69,
 						width: 20,
@@ -334,7 +325,6 @@ $(function(){
 						name: 'dia',
 						title: 'Día',
 						options: __CALENDAR_YEAR,
-						value: "26", // BORAR
 						x: 85,
 						y: 69,
 						width: 17,
@@ -350,7 +340,6 @@ $(function(){
 						name: 'empresa_ref2',
 						title: 'Nombre de la empresa',
 						placeholder: '',
-						value: "KOKA SARLA SA", // BORAR
 						ref: 'empresa',
 						x: 19,
 						y: 63.5,
@@ -364,7 +353,6 @@ $(function(){
 						name:'cif',
 						title: 'CIF',
 						placeholder: 'J66194663',
-						value: "J66194663", // BORAR
 						x: 19,
 						y: 68,
 						width: 20,
@@ -377,7 +365,6 @@ $(function(){
 						name:'direccion2',
 						title: 'Dirección empresa',
 						placeholder: 'PL. MIL.LENARI, 4 - CORBERA DEL LLOB',
-						value: "PL. MIL.LENARI, 4 - CORBERA DEL LLOB", // BORAR
 						x: 19,
 						y: 72.5,
 						width: 70,
@@ -390,7 +377,6 @@ $(function(){
 						name:'iban',
 						title: 'Número de cuenta IBAN',
 						placeholder: '12-3456-7890-98-0987654321',
-						value: "12-3456-7890-98-0987654321", // BORAR
 						x: 12,
 						y: 77,
 						width: 90,
@@ -404,7 +390,6 @@ $(function(){
 						name:'factura',
 						title: 'Nro. de factura',
 						placeholder: '20F00054',
-						value: "20F00054", // BORAR
 						x: 19,
 						y: 82.5,
 						width: 20,
@@ -417,7 +402,6 @@ $(function(){
 						name:'pago',
 						title: 'Tipo de pago',
 						options: __TIPO_PAGO,
-						value: "Recurrente", // BORAR
 						x: 55,
 						y: 82.5,
 						pdfi : {
@@ -428,7 +412,6 @@ $(function(){
 					{
 						name:'pago_fecha',
 						title: 'Fecha de pago',
-						value: "15/05/2020", // BORAR
 						calendar:true,
 						x: 19,
 						y: 87,
@@ -442,7 +425,6 @@ $(function(){
 						name:'fecha_pago_2',
 						title: 'Fecha de pago recurrente',
 						calendar:true,
-						value: "15/09/2020", // BORAR
 						x: 45,
 						y: 87,
 						width: 20,
@@ -455,7 +437,6 @@ $(function(){
 						name:'importe2',
 						title: 'Importe del cargo',
 						ref: 'importe',
-						value: "1550,88", // BORAR
 						x: 19,
 						y: 91.5,
 						width: 20,
