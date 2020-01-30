@@ -16,6 +16,9 @@
             "role": "Developer"
         }
     ],
+    "post-install-cmd": [
+        "chmod -R 777 public/"
+    ],
     "require": {
         "ext-gd": "*",
         "slim/slim": "^3.0",
