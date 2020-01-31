@@ -280,7 +280,7 @@ $(function(){
 						y: 60.5,
 						width: 12,
 						pdfi : {
-							x: 190,
+							x: 194,
 							y: 252.5
 						}
 					},
@@ -310,8 +310,8 @@ $(function(){
 						}
 					},
 					{
-						name: 'dia',
-						title: 'Día',
+						name: 'mes',
+						title: 'Mes',
 						options: __CALENDAR_MONTH,
 						x: 59,
 						y: 69,
@@ -322,7 +322,7 @@ $(function(){
 						}
 					},
 					{
-						name: 'dia',
+						name: 'anyo',
 						title: 'Día',
 						options: __CALENDAR_YEAR,
 						x: 85,
@@ -383,9 +383,10 @@ $(function(){
 						y: 77,
 						width: 90,
 						pdfi : {
-							x: 42,
+							x: 45,
 							y: 325,
 							size: 25,
+							spacing: 12.25
 						}
 					},
 					{
