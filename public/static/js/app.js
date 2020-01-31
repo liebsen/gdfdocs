@@ -377,6 +377,8 @@ $(function(){
 						name:'iban',
 						title: 'Número de cuenta IBAN',
 						placeholder: '12-3456-7890-98-0987654321',
+						pattern: /(\d{2})(\d{4})(\d{4})(\d{2})(\d{10})/,
+						replace: "$1-$2-$3-$4-$5",
 						x: 12,
 						y: 77,
 						width: 90,
@@ -573,6 +575,16 @@ $(function(){
 					    .appendTo(".page"+page_no);
 				}
 
+				if(item.replace){
+					$('#'+item.name).on('keyup',(e) => {
+						var n = $(e.target).val()
+						n = n.split('-').join('')
+						n = n.replace(item.pattern, item.replace)
+						n = n.split('--').join('')
+						$(e.target).val(n)
+					})
+				}
+				
 				$('[data-toggle="datepicker"]').datepicker({
 			  		format: 'dd/mm/yyyy'
 				})
@@ -598,6 +610,11 @@ $(function(){
 
 	function showPDF(pdf_name) {
 		$("#pdf-loader").show();
+
+		if(__CURRENT_DOC!= pdf_name){
+			$('.page').remove()
+		}
+
 		__CURRENT_DOC = pdf_name
 		PDFJS.getDocument({ url: __DOCS_PATH + pdf_name + '.pdf' }).then(function(pdf_doc) {
 			__PDF_DOC = pdf_doc;
