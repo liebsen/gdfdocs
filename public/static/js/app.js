@@ -450,8 +450,8 @@ $(function(){
 					}
 				]
 			},
-			'ADHESION': {},
-			'MATRICULA': {}
+			'ADHESION_GDF': {},
+			'MATRICULA_GDF': {}
 		}
 
 		/*
