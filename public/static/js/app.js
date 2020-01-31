@@ -377,7 +377,7 @@ $(function(){
 						name:'iban',
 						title: 'Número de cuenta IBAN',
 						placeholder: '12-3456-7890-98-0987654321',
-						pattern: /(\d{2})(\d{4})(\d{4})(\d{2})(\d{10})/,
+						pattern: /(\d{2})(\d{4})?(\d{4})?(\d{2})?(\d{10})?/,
 						replace: "$1-$2-$3-$4-$5",
 						x: 12,
 						y: 77,
@@ -584,7 +584,7 @@ $(function(){
 						$(e.target).val(n)
 					})
 				}
-				
+
 				$('[data-toggle="datepicker"]').datepicker({
 			  		format: 'dd/mm/yyyy'
 				})
