@@ -703,6 +703,45 @@ $(function(){
 			showPage(++__CURRENT_PAGE);
 	});
 
+	$("#pdf-send").on('click', function(e) {
+				var t = $(this)
+
+        swal("Enviar documento por email", {
+          content: {
+            element: 'input',
+            attributes: {
+              placeholder: "Ingresa el email en el que deseas recibir el documento"
+            }
+          },
+          closeOnClickOutside:false
+        })
+        .then((email) => {
+          if(email){
+          	t.addClass('is-loading')
+	      	$.ajax({
+		        type:'post',
+		        url: '/v1.0/send',
+		        data:{
+		        	pdf_name: __CURRENT_DOC,
+		        	values: getValues(),
+		        	email: email
+		        },
+		        success: function(res) {
+		        	t.removeClass('is-loading')
+		        	if(res.status === 'success'){
+		        		snackbar('success',`Se completó el envío de documento PDF a ${email}.`,3000)
+		        	} else {
+		    			snackbar('error','Hubo un error al enviar email. Por favor intente nuevamente en unos instantes.',3000)    		
+		        	}
+		      	}
+	          })
+	      	}
+        })
+        .catch((e) => {
+        	snackbar('error','Hubo un error al enviar email. Por favor intente nuevamente en unos instantes.',3000)
+        })
+	})
+
 	// Download PDF
 	$("#pdf-download").on('click', function(e) {
 		var t = $(this)
