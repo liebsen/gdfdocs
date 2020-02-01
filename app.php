@@ -15,7 +15,7 @@
  *
  */
 
-date_default_timezone_set('America/Argentina/Buenos_Aires'); 
+date_default_timezone_set('Europe/Madrid'); 
 
 require __DIR__ . "/vendor/autoload.php";
 
@@ -28,8 +28,7 @@ $app = new \Slim\App([
     ]
 ]);
 
-
-//require __DIR__ . "/routes/functions.php";
+require __DIR__ . "/routes/functions.php";
 require __DIR__ . "/routes/dependencies.php";
 require __DIR__ . "/routes/handlers.php";
 require __DIR__ . "/routes/middleware.php";

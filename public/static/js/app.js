@@ -58,67 +58,52 @@ $(function(){
 						title: 'Nombre del alumno o texto de bienvenida',
 						value: 'Le damos la bienvenida a la formación continua',
 						placeholder: 'Le damos la bienvenida a la formación continua',
-						align: 'center',
-						y: 23.5,
-						pdfi : {
-							align: 'C',
-							x: 0,
-							y: 85,
-							w: 280,
-							h: 40
-						}
+						maxlength: 80,
+						align: 'C',
+						y: 25,
+						offset_y:-3
 					},
 					{
 						name: 'telefono',
 						title: 'Nro. de teléfono',
 						placeholder: '93 866 35 23',
 						value: '93 866 35 23',
+						maxlength: 16,
 						x: 58,
-						y: 49,
-						width: 30,
-						pdfi : {
-							x: 163,
-							y: 213
-						}
+						y: 52,
+						width: 42.5,
+						offset_y: -5
 					},
 					{
 						name: 'email',
 						title: 'Email de contacto',
 						placeholder: 'tutor@gdf-formacion.com',
 						value: 'tutor@gdf-formacion.com',
+						maxlength: 50,
 						x: 47,
-						y: 53.5,
-						width: 40,
-						pdfi : {
-							x: 133,
-							y: 226
-						}
+						y: 55.25,
+						width: 53.5,
+						offset_y: -1.5
 					},
 					{
 						name: 'horario',
 						title: 'Horario de tutorías',
 						placeholder: 'de 9 a 14 de Lunes a Viernes',
 						value: 'de 9 a 14 de Lunes a Viernes',
+						maxlength: 50,
 						x: 50,
-						y: 58,
-						width: 45,
-						pdfi : {
-							x: 142,
-							y: 239
-						}
+						y: 58.35,
+						width: 50.5,
+						offset_y: 2.25
 					},
 					{
 						name: 'direccion',
 						title: 'Dirección',
 						placeholder: 'Ctra. de Granollers a Carcadeu K.1.5 of. 4 - 08520 Les Franqueses del Vallès',
 						value: 'Ctra. de Granollers a Carcadeu K.1.5 of. 4 - 08520 Les Franqueses del Vallès',
-						align: 'center',
-						y: 67.5,
-						pdfi : {
-							align:'C',
-							x: 30,
-							y: 284
-						}
+						align: 'C',
+						y: 69.5,
+						x: 1
 					}
 				],
 				2:[
@@ -126,49 +111,37 @@ $(function(){
 						name: 'empresa',
 						title: 'Nombre de la empresa',
 						placeholder: 'Empresa',
-						x: 27,
-						y: 55,
+						maxlength: 32,
+						x: 30,
+						y: 57.75,
 						width: 60,
-						pdfi : {
-							x: 88,
-							y: 237
-						}
+						offset_y: -5
 					},
 					{
 						name: 'importe',
 						title: 'Importe a bonificar',
 						placeholder: '€420,00',
-						x: 35,
-						y: 59.5,
-						width: 20,
-						pdfi : {
-							x: 105,
-							y: 248
-						}
+						maxlength: 10,
+						x: 37,
+						y: 60.55,
+						width: 30,
+						offset_y: -0.75
 					},
 					{
 						name: 'mes_bonificacion',
 						title: 'Mes a bonificar',
-						//regexp: '/^[679]{1}[0-9]{8}$/',
-						/*/^\+(?:[0-9] ?){6,14}[0-9]$/*/
 						options: __CALENDAR_MONTH,
-						x: 43,
-						y: 64,
-						pdfi : {
-							x: 140,
-							y: 258
-						}
+						x: 46,
+						y: 63,
+						offset_y:3.6
 					},
 					{
 						name: 'mes_pagadero',
 						title: 'Mes pagadero',
 						options: __CALENDAR_MONTH,
-						x: 70,
-						y: 64,
-						pdfi : {
-							x: 75,
-							y: 264
-						}
+						x: 30,
+						y: 64.5,
+						offset_y: 9
 					}
 				],
 				4:[
@@ -177,15 +150,8 @@ $(function(){
 						title: 'Nombre de la empresa',
 						placeholder: 'Completar en página 2',
 						ref: 'empresa',
-						align: 'center',
-						y: 21.5,
-						pdfi : {
-							align: 'C',
-							x: 0,
-							y: 75.5,
-							w: 280,
-							h: 40
-						}
+						align: 'C',
+						y: 23
 					},
 					{
 						name:'tipo_formacion',
@@ -193,145 +159,100 @@ $(function(){
 						options: __TIPO_FORMACION,
 						placeholder: '93 866 35 23',
 						x: 30,
-						y: 26,
-						width: 30,
-						pdfi : {
-							x: 93,
-							y: 116
-						}
+						y: 28.5,
+						width: 30
 					},
 					{
 						name:'alumno',
-						title: 'Nombre del alumno. Si son varios separados por coma.',
-						placeholder: 'Nombre del alumno. Si son varios separados por coma.',
+						title: 'Nombre del alumno. Si son varios separados salto de línea.',
+						placeholder: 'Nombre del alumno. Si son varios separados salto de línea.',
 						multiline: true,
-						x: 24,
-						y: 30.5,
-						width: 70,
-						pdfi : {
-							align: 'C',
-							x: 0,
-							y: 110,
-							w: 280,
-							h: 80
-						}
+						align: 'C',
+						y: 36,
+						offset_y: -2,
 					},
 					{
 						name:'curso',
 						title: 'Nombre del curso',
 						placeholder: 'Nombre del curso',
 						value:'PREVENCIÓN DE RIESGOS LABORALES - BÁSICO',
-						align:'center',
-						y: 43.5,
-						pdfi : {
-							align: 'C',
-							x: 0,
-							y: 144,
-							w: 280,
-							h: 80
-						}
+						align:'C',
+						y: 45.85,
+						offset_y: -1
 					},
 					{
 						name:'componentes',
 						title: 'Componentes del curso',
 						placeholder: 'Componentes del curso',
 						value:'CLAVES ONLINE - MANUAL - BLOC DE NOTAS - BOLÍGRAFO',
-						align:'center',
-						y: 51.5,
-						pdfi : {
-							align: 'C',
-							x: 0,
-							y: 178,
-							w: 280,
-							h: 80
-						}
+						align:'C',
+						y: 54,
+						offset_y: -2
 					},
 					{
 						name: 'duracion',
 						title: 'Duración del curso',
 						placeholder: '60',
 						value: '60',
-						x: 26,
-						y: 56,
-						width: 10,
-						pdfi : {
-							x: 85,
-							y: 237
-						}
+						maxlength: 3,
+						x: 28,
+						y: 57.75,
+						width: 10
 					},
 					{
 						name: 'accion',
 						title: 'Nro. acción del curso',
 						placeholder: '60',
 						value: '6275',
-						x: 26,
-						y: 60.5,
-						width: 12,
-						pdfi : {
-							x: 80,
-							y: 252.5
-						}
+						maxlength: 3,
+						x: 26.5,
+						y: 61.7,
+						width: 15,
+						offset_y: 2
 					},
 					{
 						name: 'grupo',
 						title: 'Nro. de grupo',
 						placeholder: '0054',
+						maxlength: 8,
 						x: 69,
-						y: 60.5,
-						width: 12,
-						pdfi : {
-							x: 194,
-							y: 252.5
-						}
+						y: 61.7,
+						width: 15,
+						offset_y: 2
 					},
 					{
 						name: 'ciudad',
 						title: 'Ciudad',
 						placeholder: 'BARCELONA',
 						value: 'BARCELONA',
-						x: 12,
-						y: 69,
-						width: 25,
-						pdfi : {
-							x: 38,
-							y: 286.5
-						}
+						maxlength: 50,
+						x: 13,
+						y: 69.95,
+						width: 25
 					},
 					{
 						name: 'dia',
 						title: 'Día',
 						options: __CALENDAR_DAY,
-						x: 45,
-						y: 69,
-						width: 13,
-						pdfi : {
-							x: 135,
-							y: 286.5
-						}
+						x: 46,
+						y: 69.95,
+						width: 15
 					},
 					{
 						name: 'mes',
 						title: 'Mes',
 						options: __CALENDAR_MONTH,
 						x: 59,
-						y: 69,
-						width: 20,
-						pdfi : {
-							x: 170,
-							y: 286.5
-						}
+						y: 69.95,
+						width: 20
 					},
 					{
 						name: 'anyo',
 						title: 'Día',
 						options: __CALENDAR_YEAR,
-						x: 85,
-						y: 69,
-						width: 17,
-						pdfi : {
-							x: 250,
-							y: 286.5
-						}
+						x: 84,
+						y: 69.95,
+						width: 20
 					}
 				],
 				5:[
@@ -342,36 +263,28 @@ $(function(){
 						placeholder: '',
 						ref: 'empresa',
 						x: 19,
-						y: 63.5,
+						y: 66.25,
 						width: 60,
-						pdfi : {
-							x: 48,
-							y: 272
-						}
+						offset_y: -5
 					},
 					{
 						name:'cif',
 						title: 'CIF',
 						placeholder: 'J66194663',
+						maxlength: 10,
 						x: 19,
-						y: 68,
+						y: 69.25,
 						width: 20,
-						pdfi : {
-							x: 36,
-							y: 284
-						}
+						offset_y: -3
 					},
 					{
 						name:'direccion2',
 						title: 'Dirección empresa',
 						placeholder: 'PL. MIL.LENARI, 4 - CORBERA DEL LLOB',
 						x: 19,
-						y: 72.5,
+						y: 72.45,
 						width: 70,
-						pdfi : {
-							x: 52,
-							y: 297
-						}
+						offset_y: -1
 					},
 					{
 						name:'iban',
@@ -379,74 +292,57 @@ $(function(){
 						placeholder: '12-3456-7890-98-0987654321',
 						pattern: /(\d{2})(\d{4})?(\d{4})?(\d{2})?(\d{10})?/,
 						replace: "$1-$2-$3-$4-$5",
-						x: 12,
-						y: 77,
+						maxlength: 26, 
+						x: 15.5,
+						y: 79.15,
 						width: 90,
-						pdfi : {
-							x: 45,
-							y: 325,
-							size: 25,
-							spacing: 12.25
-						}
+						size: 25,
+						spacing: 12.25,
+						offset_y: -2.5
 					},
 					{
 						name:'factura',
 						title: 'Nro. de factura',
 						placeholder: '20F00054',
-						x: 19,
-						y: 82.5,
+						maxlength: 16,
+						x: 21,
+						y: 84.8,
 						width: 20,
-						pdfi : {
-							x: 59,
-							y: 348
-						}
+						offset_y: -3
 					},
 					{
 						name:'pago',
 						title: 'Tipo de pago',
 						options: __TIPO_PAGO,
 						x: 55,
-						y: 82.5,
-						pdfi : {
-							x: 160,
-							y: 348
-						}
+						y: 84.8,
+						offset_y: -3
 					},
 					{
 						name:'pago_fecha',
 						title: 'Fecha de pago',
 						calendar:true,
-						x: 19,
-						y: 87,
+						x: 22,
+						y: 88,
 						width: 20,
-						pdfi : {
-							x: 65,
-							y: 360
-						}
+						offset_y: -1
 					},
 					{
 						name:'fecha_pago_2',
 						title: 'Fecha de pago recurrente',
 						calendar:true,
 						x: 45,
-						y: 87,
+						y: 88,
 						width: 20,
-						pdfi : {
-							x: 120,
-							y: 360
-						}
+						offset_y: -1
 					},
 					{
 						name:'importe2',
 						title: 'Importe del cargo',
 						ref: 'importe',
-						x: 19,
-						y: 91.5,
-						width: 20,
-						pdfi : {
-							x: 83,
-							y: 374.5
-						}
+						x: 24,
+						y: 91.3,
+						width: 20
 					}
 				]
 			},
@@ -483,26 +379,36 @@ $(function(){
 		} else {
 			$("<div>")
 			     .attr("class", "page page"+page_no)
-			     //.attr("style", 'width:' + $('#pdf-canvas').width() + 'px;' + 'height:' + $('#pdf-canvas').height() + 'px;')
 			     .appendTo("#pdf-contents");
 
 			$(fields).each((i, item) => {
 				var style = ''
 				var disabled = false
+				var maxlength = item.maxlength||999
 				var value = item.value||''
 				var placeholder = item.placeholder||''
+				const offset_x = item.offset_x||0
+				const offset_y = item.offset_y||0
+
 				if(item.align){
 					style+= 'text-align:center;'
-					if(item.align==='center'){
+					if(item.align==='C'){
 						style+='margin: 0 auto;display: inherit;'
 					}
 				}
-				if(item.x)
-					style+=`left:${item.x}%;`
-				if(item.y)
-					style+=`top:${item.y}%;`
-				if(item.width)
+
+				if(item.x){
+					const x = item.x + offset_x
+					style+=`left:${x}%;`
+				}
+
+				if(item.y){
+					const y = item.y + offset_y
+					style+=`top:${y}%;`
+				}
+				if(item.width){
 					style+=`width:${item.width}%;min-width:${item.width}%;`
+				}
 				if(item.ref){
 					value = $('#'+item.ref).val()
 					var pageno = 0
@@ -569,6 +475,7 @@ $(function(){
 					    .attr("id", item.name)
 						.attr("name", item.name)
 					    .attr("title", item.title)
+					    .attr("maxlength", maxlength)
 					    .attr("placeholder", placeholder)
 					    .attr("value", value)
 					    .attr("style", style)
@@ -593,20 +500,14 @@ $(function(){
 		}
 	}
 
-	function getValues(){
+	function setInputValues(){
 		var doc = __INPUTS[__CURRENT_DOC]
 		var data = {}
 		for(var pageno in doc){
 			for(var fielno in doc[pageno]){
-				if(!data[pageno]) data[pageno] = []
-				data[pageno].push({
-					pdfi: doc[pageno][fielno].pdfi,
-					value : $('#'+doc[pageno][fielno].name).val()
-				})
+				doc[pageno][fielno].value = $('#'+doc[pageno][fielno].name).val()
 			}
 		}
-
-		return data
 	}
 
 	function showPDF(pdf_name) {
@@ -704,8 +605,8 @@ $(function(){
 	});
 
 	$("#pdf-send").on('click', function(e) {
-				var t = $(this)
-
+		var t = $(this)
+		setInputValues()
         swal("Enviar documento por email", {
           content: {
             element: 'input',
@@ -718,12 +619,13 @@ $(function(){
         .then((email) => {
           if(email){
           	t.addClass('is-loading')
+          	snackbar('default','Se inició el envío del documento, por favor espere...',2000)
 	      	$.ajax({
 		        type:'post',
 		        url: '/v1.0/send',
 		        data:{
 		        	pdf_name: __CURRENT_DOC,
-		        	values: getValues(),
+		        	values: __INPUTS[__CURRENT_DOC],
 		        	email: email
 		        },
 		        success: function(res) {
@@ -746,14 +648,15 @@ $(function(){
 	$("#pdf-download").on('click', function(e) {
 		var t = $(this)
 		t.addClass('is-loading')
-
+		setInputValues()
+		snackbar('default','Se inició la impresión del documento, por favor espere...',2000)
       	$.ajax({
 	        type:'post',
 	        url: '/v1.0/download',
 	        dataType: 'binary',
 	        data:{
 	        	pdf_name: __CURRENT_DOC,
-	        	values: getValues()
+	        	values: __INPUTS[__CURRENT_DOC]
 	        },
 	        xhrFields: {
 	          responseType: 'blob'
@@ -766,13 +669,22 @@ $(function(){
 	          link.download = __CURRENT_DOC + '.pdf'
 	          document.body.appendChild(link);
 	          link.click()
-	          snackbar('success','Se completó la descarga de documento PDF.',3000)
+	          snackbar('success','Se completó la descarga de documento PDF.',5000)
 	        },
 	        error: function(xhr) {
 	          $(t).removeClass('is-loading')
 	          swal('Error al generar documento',"Por favor intente nuevamente en unos instantes.")
 	        }
 	    })
+	})
+
+	$(document).keydown(function(e) {
+		if(e.keyCode=='37'){
+			$('#pdf-prev').click()
+		}
+		if(e.keyCode=='39'){
+			$('#pdf-next').click()	
+		}
 	})
 
 	showOptions()

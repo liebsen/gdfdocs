@@ -1,0 +1,16 @@
+{% extends "layouts/email.html" %}
+
+{% block body %}
+
+<h1>GDF Documentos</h1>
+<br>
+<p>Se adjunta en la presente el archivo {{pdf_name}}.pdf.</p>
+<br>
+<p>Que tengas une excelente día</p><br>
+<hr>
+<p>
+	<small>Enviado con <em>GDF Documentos</em></small><br>
+	<a href="{{baseurl}}">GDF DOcumentos</a>
+</p>
+
+{% endblock %}  

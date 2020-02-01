@@ -31,6 +31,9 @@ $container['view'] = function ($container) {
         'cache' => false,
     ]);
 
+    $baseurl = $container['request']->getUri()->getScheme().'://'.$container['request']->getUri()->getHost();
+    $view->offsetSet('baseurl', $baseurl);
+
     $view->addExtension(new \Slim\Views\TwigExtension(
         $container->router,
         $container->request->getUri()
