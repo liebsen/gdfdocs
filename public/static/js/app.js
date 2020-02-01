@@ -1,42 +1,5 @@
 $(function(){
 
-    var snackbar = function(messageType,message,timeout){
-      if(timeout===undefined) timeout = 5000
-
-      const removes = [
-        'ui-snackbar--is-inactive',
-        'ui-snackbar--success',
-        'ui-snackbar--error',
-        'ui-snackbar--default'
-      ]
-
-      const adds = [
-        'ui-snackbar--is-active',
-        'ui-snackbar--' + messageType,
-      ]
-
-      removes.forEach(remove => {
-        document.querySelector('.ui-snackbar').classList.remove(remove)
-      })
-
-      adds.forEach(add => {
-        document.querySelector('.ui-snackbar').classList.add(add)
-      })
-
-      document.querySelector('.ui-snackbar__message').innerHTML = message
-      
-      setTimeout(() => {
-        $('.ui-snackbar').removeClass('ui-snackbar--is-active').addClass('ui-snackbar--is-inactive')
-      },timeout)
-    }
-
-	/*
-1. CCF - Pack Documentación (4 páginas)
-2. Hoja de Adhesión (2 páginas)
-3. Matrícula GDF (1 página)
-4. Orden Domiliación (1 página)
-*/
-
 	var __PDF_DOC,
 		__CALENDAR_MONTH = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
 		__CALENDAR_DAY = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
@@ -369,6 +332,10 @@ $(function(){
 		var doc = __INPUTS[__CURRENT_DOC]
 		var fields = doc[page_no]
 
+		if($('.page').length === 0 && $(fields).length){
+			snackbar('default',"Utiliza las flechas ⬅️➡️ para navegar a través de las páginas",3000)
+		}
+
 		if($('.page' + page_no).length){
 			$(fields).each((i, item) => {
 				if(item.ref){
@@ -498,6 +465,8 @@ $(function(){
 				})
 			})
 		}
+
+		$('input:visible').first().focus()
 	}
 
 	function setInputValues(){
@@ -535,7 +504,7 @@ $(function(){
 			// If error re-show the upload button
 			$("#pdf-loader").hide();
 			
-			alert(error.message);
+			snackbar('error',error.message)
 		});;
 	}
 
@@ -682,8 +651,22 @@ $(function(){
 		if(e.keyCode=='37'){
 			$('#pdf-prev').click()
 		}
+		if(e.keyCode=='38'){
+			if($('input:focus').length){
+				$('input:focus').prev().focus()
+			} else {
+				$('input:visible').last().focus()
+			}
+		}
 		if(e.keyCode=='39'){
 			$('#pdf-next').click()	
+		}
+		if(e.keyCode=='40'){
+			if($('input:focus').length){
+				$('input:focus').next().focus()
+			} else {
+				$('input:visible').first().focus()
+			}
 		}
 	})
 

@@ -12,7 +12,7 @@ body, button, input, select, textarea {
 }
 
 .container {
-	max-width:auto;
+	max-width:900px;
 	height: 100%;
 }
 
