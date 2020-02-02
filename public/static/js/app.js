@@ -365,12 +365,12 @@ $(function(){
 				}
 
 				if(item.x){
-					const x = item.x + offset_x
+					const x = item.x// + offset_x
 					style+=`left:${x}%;`
 				}
 
 				if(item.y){
-					const y = item.y + offset_y
+					const y = item.y - 2.5// + offset_y
 					style+=`top:${y}%;`
 				}
 				if(item.width){
@@ -386,7 +386,7 @@ $(function(){
 							}
 						}
 					}
-					placeholder = `Referencia:${item.ref} en página ${pageno}`
+					placeholder = `{${item.ref} p${pageno}}`
 					disabled = true
 				}
 
