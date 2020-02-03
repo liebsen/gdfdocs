@@ -555,41 +555,43 @@ $(function(){
 	$("#pdf-send").on('click', function(e) {
 		var t = $(this)
 		setInputValues()
-        swal("Enviar documento por email", {
-          content: {
-            element: 'input',
-            attributes: {
-              placeholder: "Ingresa el email en el que deseas recibir el documento"
-            }
-          },
-          closeOnClickOutside:false
-        })
-        .then((email) => {
-          if(email){
-          	t.addClass('is-loading')
-          	snackbar('default','Se inició el envío del documento, por favor espere...',2000)
-	      	$.ajax({
-		        type:'post',
-		        url: '/v1.0/send',
-		        data:{
-		        	pdf_name: __CURRENT_DOC,
-		        	values: __INPUTS[__CURRENT_DOC],
-		        	email: email
-		        },
-		        success: function(res) {
-		        	t.removeClass('is-loading')
-		        	if(res.status === 'success'){
-		        		snackbar('success',`Se completó el envío de documento PDF a ${email}.`,3000)
-		        	} else {
-		    			snackbar('error','Hubo un error al enviar email. Por favor intente nuevamente en unos instantes.',3000)    		
-		        	}
-		      	}
-	          })
-	      	}
-        })
-        .catch((e) => {
-        	snackbar('error','Hubo un error al enviar email. Por favor intente nuevamente en unos instantes.',3000)
-        })
+
+		swal({
+		  title: "Enviar documento por email",
+		  text: "Ingresa el email en el que deseas recibir el documento:",
+		  type: "input",
+		  showCancelButton: true,
+		  closeOnConfirm: false,
+		  inputPlaceholder: "joseperez@gmail.com"
+		},
+		function(email){
+			if (email === false) return false;
+
+			if (email === "") {
+				swal.showInputError("por favor ingrese un email");
+				return false
+			}
+			swal.close()
+			t.addClass('is-loading')
+			snackbar('default','Se inició el envío del documento, por favor espere...',2000)
+			$.ajax({
+				type:'post',
+				url: '/v1.0/send',
+				data:{
+					pdf_name: __CURRENT_DOC,
+					values: __INPUTS[__CURRENT_DOC],
+					email: email
+				},
+				success: function(res) {
+					t.removeClass('is-loading')
+					if(res.status === 'success'){
+						snackbar('success',`Se completó el envío de documento PDF a ${email}.`,3000)
+					} else {
+						snackbar('error','Hubo un error al enviar email. Por favor intente nuevamente en unos instantes.',3000)    		
+					}
+				}
+			})		  
+		});
 	})
 
 	// Download PDF
