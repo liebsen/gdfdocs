@@ -23,8 +23,7 @@ $(function(){
 						placeholder: 'Le damos la bienvenida a la formación continua',
 						maxlength: 80,
 						align: 'C',
-						y: 25,
-						offset_y:-3
+						y: 25
 					},
 					{
 						name: 'telefono',
@@ -34,8 +33,7 @@ $(function(){
 						maxlength: 16,
 						x: 58,
 						y: 52,
-						width: 42.5,
-						offset_y: -5
+						width: 42.5
 					},
 					{
 						name: 'email',
@@ -45,8 +43,7 @@ $(function(){
 						maxlength: 50,
 						x: 47,
 						y: 55.25,
-						width: 53.5,
-						offset_y: -1.5
+						width: 53.5
 					},
 					{
 						name: 'horario',
@@ -56,8 +53,7 @@ $(function(){
 						maxlength: 50,
 						x: 50,
 						y: 58.35,
-						width: 50.5,
-						offset_y: 2.25
+						width: 50.5
 					},
 					{
 						name: 'direccion',
@@ -77,8 +73,7 @@ $(function(){
 						maxlength: 32,
 						x: 30,
 						y: 57.75,
-						width: 60,
-						offset_y: -5
+						width: 60
 					},
 					{
 						name: 'importe',
@@ -87,24 +82,21 @@ $(function(){
 						maxlength: 10,
 						x: 37,
 						y: 60.55,
-						width: 30,
-						offset_y: -0.75
+						width: 30
 					},
 					{
 						name: 'mes_bonificacion',
 						title: 'Mes a bonificar',
 						options: __CALENDAR_MONTH,
 						x: 46,
-						y: 63,
-						offset_y:3.6
+						y: 63
 					},
 					{
 						name: 'mes_pagadero',
 						title: 'Mes pagadero',
 						options: __CALENDAR_MONTH,
 						x: 30,
-						y: 64.5,
-						offset_y: 9
+						y: 64.5
 					}
 				],
 				4:[
@@ -131,8 +123,7 @@ $(function(){
 						placeholder: 'Nombre del alumno. Si son varios separados salto de línea.',
 						multiline: true,
 						align: 'C',
-						y: 36,
-						offset_y: -2,
+						y: 36
 					},
 					{
 						name:'curso',
@@ -140,8 +131,7 @@ $(function(){
 						placeholder: 'Nombre del curso',
 						value:'PREVENCIÓN DE RIESGOS LABORALES - BÁSICO',
 						align:'C',
-						y: 45.85,
-						offset_y: -1
+						y: 45.85
 					},
 					{
 						name:'componentes',
@@ -149,8 +139,7 @@ $(function(){
 						placeholder: 'Componentes del curso',
 						value:'CLAVES ONLINE - MANUAL - BLOC DE NOTAS - BOLÍGRAFO',
 						align:'C',
-						y: 54,
-						offset_y: -2
+						y: 54
 					},
 					{
 						name: 'duracion',
@@ -170,8 +159,7 @@ $(function(){
 						maxlength: 3,
 						x: 26.5,
 						y: 61.7,
-						width: 15,
-						offset_y: 2
+						width: 15
 					},
 					{
 						name: 'grupo',
@@ -180,8 +168,7 @@ $(function(){
 						maxlength: 8,
 						x: 69,
 						y: 61.7,
-						width: 15,
-						offset_y: 2
+						width: 15
 					},
 					{
 						name: 'ciudad',
@@ -227,8 +214,7 @@ $(function(){
 						ref: 'empresa',
 						x: 19,
 						y: 66.25,
-						width: 60,
-						offset_y: -5
+						width: 60
 					},
 					{
 						name:'cif',
@@ -237,8 +223,7 @@ $(function(){
 						maxlength: 10,
 						x: 19,
 						y: 69.25,
-						width: 20,
-						offset_y: -3
+						width: 20
 					},
 					{
 						name:'direccion2',
@@ -246,8 +231,7 @@ $(function(){
 						placeholder: 'PL. MIL.LENARI, 4 - CORBERA DEL LLOB',
 						x: 19,
 						y: 72.45,
-						width: 70,
-						offset_y: -1
+						width: 70
 					},
 					{
 						name:'iban',
@@ -260,8 +244,7 @@ $(function(){
 						y: 79.15,
 						width: 90,
 						size: 25,
-						spacing: 12.25,
-						offset_y: -2.5
+						spacing: 12.25
 					},
 					{
 						name:'factura',
@@ -270,16 +253,14 @@ $(function(){
 						maxlength: 16,
 						x: 21,
 						y: 84.8,
-						width: 20,
-						offset_y: -3
+						width: 20
 					},
 					{
 						name:'pago',
 						title: 'Tipo de pago',
 						options: __TIPO_PAGO,
 						x: 55,
-						y: 84.8,
-						offset_y: -3
+						y: 84.8
 					},
 					{
 						name:'pago_fecha',
@@ -287,8 +268,7 @@ $(function(){
 						calendar:true,
 						x: 22,
 						y: 88,
-						width: 20,
-						offset_y: -1
+						width: 20
 					},
 					{
 						name:'fecha_pago_2',
@@ -296,8 +276,7 @@ $(function(){
 						calendar:true,
 						x: 45,
 						y: 88,
-						width: 20,
-						offset_y: -1
+						width: 20
 					},
 					{
 						name:'importe2',
@@ -326,6 +305,9 @@ $(function(){
 			    text: id
 			}))
 		}
+	document.querySelector('.spinner-container').remove()
+	document.querySelector('.section').classList.remove('is-hidden')
+
 	}
 
 	function showInputs(page_no){
@@ -354,8 +336,6 @@ $(function(){
 				var maxlength = item.maxlength||999
 				var value = item.value||''
 				var placeholder = item.placeholder||''
-				const offset_x = item.offset_x||0
-				const offset_y = item.offset_y||0
 
 				if(item.align){
 					style+= 'text-align:center;'
@@ -365,12 +345,11 @@ $(function(){
 				}
 
 				if(item.x){
-					const x = item.x// + offset_x
-					style+=`left:${x}%;`
+					style+=`left:${item.x}%;`
 				}
 
 				if(item.y){
-					const y = item.y - 2.5// + offset_y
+					const y = item.y - 2.5
 					style+=`top:${y}%;`
 				}
 				if(item.width){
@@ -672,3 +651,4 @@ $(function(){
 
 	showOptions()
 })
+

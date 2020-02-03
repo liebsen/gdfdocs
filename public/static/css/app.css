@@ -23,6 +23,33 @@ body, button, input, select, textarea {
 	padding-bottom: 0!important;
 }
 
+/* spinner */
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  width:45px; 
+  height:45px;
+  margin: 100px auto;
+  display:block;
+  height: 70%;
+}
+
+.spinner-container .path {
+	stroke-dasharray: 1,150; /* 1%, 101% circumference */
+	stroke-dashoffset: 0;
+	stroke: rgba(27, 154, 89, 0.7);
+	stroke-linecap: round;
+	-webkit-animation: dash 1.5s ease-in-out infinite;
+	animation: dash 1.5s ease-in-out infinite;
+}
+
 #upload-button {
 	width: 150px;
 	display: block;
@@ -168,3 +195,41 @@ body, button, input, select, textarea {
 		max-width: 900px;
 	}
 }
+
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes rotate{
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,150;  /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -35;   /* 25% circumference */
+  }
+  100% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -124;  /* -99% circumference */
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1,150;  /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -35;   /* 25% circumference */
+  }
+  100% {
+    stroke-dasharray: 90,150; /* 70%, 101% circumference */
+    stroke-dashoffset: -124;  /* -99% circumference */
+  }
+}
+
