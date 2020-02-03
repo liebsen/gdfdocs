@@ -557,8 +557,8 @@ $(function(){
 		setInputValues()
 
 		swal({
-		  title: "Enviar documento por email",
-		  text: "Ingresa el email en el que deseas recibir el documento:",
+		  title: "Compartir documento",
+		  text: "Ingresa el email con el que deseas compartir el documento:",
 		  type: "input",
 		  showCancelButton: true,
 		  closeOnConfirm: false,
