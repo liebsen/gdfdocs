@@ -14,6 +14,7 @@ use Twig\Extension\StringLoaderExtension;
 use Tuupola\Base62;
 use setasign\Fpdi\Fpdi;
 use App\Custom_FPDF;
+define('EURO',chr(128));
 
 function generate_uuid($id){
     $str = md5(uniqid($id, true));
@@ -101,9 +102,10 @@ function doc2pdf($data, $output = NULL){
         if(!empty($values[$i])){
             foreach($values[$i] as $pageno => $item){
 
-                $value = utf8_decode(str_replace("€", "EUR",$item['value']));
+                $value = utf8_decode(str_replace("€",utf8_encode(EURO),$item['value']));
+                //$value = utf8_decode($item['value']);
                 $size = $item['size']?:15;
-                $lineheight= 3;
+                $lineheight = $item['lineheight']?:3;
                 $spacing = $item['spacing']?:0;
                 $x = (float) $pdf->GetPageWidth() * (float) $item['x'] / 100;
                 $y = (float) $pdf->GetPageHeight() * (float) $item['y'] / 100;
@@ -119,7 +121,6 @@ function doc2pdf($data, $output = NULL){
                 $pdf->SetXY($x,$y);
 
                 if(strlen($item['multiline'])) {
-                    log2file($value);
                     $pdf->MultiCell(null,($lineheight * substr_count($value,"\n") + $lineheight) , $value,0,$item['align']);             
                 } else if(strlen($item['align'])) {
                     $pdf->Cell((float) $item['w'],(float) $item['h'], $value,0,1,$item['align']);

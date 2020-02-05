@@ -121,9 +121,10 @@ $(function(){
 						name:'alumno',
 						title: 'Nombre del alumno. Si son varios separados salto de línea.',
 						placeholder: 'Nombre del alumno. Si son varios separados salto de línea.',
+						lineheight: 1,
 						multiline: true,
 						align: 'C',
-						y: 36
+						y: 33
 					},
 					{
 						name:'curso',
@@ -237,14 +238,14 @@ $(function(){
 						name:'iban',
 						title: 'Número de cuenta IBAN',
 						placeholder: '12-3456-7890-98-0987654321',
-						pattern: /(\d{2})(\d{4})?(\d{4})?(\d{2})?(\d{10})?/,
-						replace: "$1-$2-$3-$4-$5",
+						regexp: /(\d{2})(\d{4})?(\d{4})?(\d{2})?(\d{10})?/,
+						regrep: "$1 $2 $3 $4 $5",
 						maxlength: 26, 
 						x: 15.5,
 						y: 79.15,
 						width: 90,
 						size: 25,
-						spacing: 12.25
+						spacing: 12.45
 					},
 					{
 						name:'factura',
@@ -429,12 +430,12 @@ $(function(){
 					    .appendTo(".page"+page_no);
 				}
 
-				if(item.replace){
+				if(item.regexp){
 					$('#'+item.name).on('keyup',(e) => {
 						var n = $(e.target).val()
-						n = n.split('-').join('')
-						n = n.replace(item.pattern, item.replace)
-						n = n.split('--').join('')
+						n = n.split(' ').join('')
+						n = n.replace(item.regexp, item.regrep)
+						n = n.split('  ').join('')
 						$(e.target).val(n)
 					})
 				}
@@ -629,6 +630,9 @@ $(function(){
 	})
 
 	$(document).keydown(function(e) {
+		if($(e.target).is('input')||
+			$(e.target).is('textarea')||
+			$(e.target).is('select')) return
 		if(e.keyCode=='37'){
 			$('#pdf-prev').click()
 		}
