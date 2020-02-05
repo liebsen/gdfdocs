@@ -104,7 +104,7 @@ function doc2pdf($data, $output = NULL){
 
                 $value = utf8_decode(str_replace("€",utf8_encode(EURO),$item['value']));
                 //$value = utf8_decode($item['value']);
-                $size = $item['size']?:15;
+                $size = $item['size']?:18;
                 $lineheight = $item['lineheight']?:3;
                 $spacing = $item['spacing']?:0;
                 $x = (float) $pdf->GetPageWidth() * (float) $item['x'] / 100;
