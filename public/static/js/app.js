@@ -70,7 +70,7 @@ $(function(){
 						name: 'empresa',
 						title: 'Nombre de la empresa',
 						placeholder: 'Empresa',
-						maxlength: 32,
+						maxlength: 50,
 						x: 30,
 						y: 57.75,
 						width: 60
@@ -121,7 +121,7 @@ $(function(){
 						name:'alumno',
 						title: 'Nombre del alumno. Si son varios separados salto de línea.',
 						placeholder: 'Nombre del alumno. Si son varios separados salto de línea.',
-						lineheight: 1,
+						lineheight: 2,
 						multiline: true,
 						align: 'C',
 						y: 33
