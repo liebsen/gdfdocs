@@ -71,6 +71,7 @@ $(function(){
 						title: 'Nombre de la empresa',
 						placeholder: 'Empresa',
 						maxlength: 50,
+						autoadjust: 34,
 						x: 30,
 						y: 57.75,
 						width: 60
@@ -78,7 +79,8 @@ $(function(){
 					{
 						name: 'importe',
 						title: 'Importe a bonificar',
-						placeholder: '€420,00',
+						placeholder: '€420',
+						value: '€420',
 						maxlength: 10,
 						x: 37,
 						y: 60.55,

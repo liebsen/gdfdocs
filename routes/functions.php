@@ -104,15 +104,16 @@ function doc2pdf($data, $output = NULL){
 
                 $value = utf8_decode(str_replace("€",utf8_encode(EURO),$item['value']));
                 //$value = utf8_decode($item['value']);
-                $size = $item['size']?:18;
-                $lineheight = $item['lineheight']?:3;
-                $spacing = $item['spacing']?:0;
+                $size = !empty($item['size']) ? (int) $item['size'] : 18;
+                $lineheight = !empty($item['lineheight']) ? (int) $item['lineheight'] : 3;
+                $spacing = !empty($item['spacing']) ? (int) $item['spacing'] : 0;
+                $autoadjust = !empty($item['autoadjust']) ? (int) $item['autoadjust'] : 0;
+                $size = $autoadjust && strlen($value) > $autoadjust ? $size - ceil((strlen($value) - $autoadjust) / 6) : $size;
                 $x = (float) $pdf->GetPageWidth() * (float) $item['x'] / 100;
                 $y = (float) $pdf->GetPageHeight() * (float) $item['y'] / 100;
 
                 if($x=='INF') $x = 1;
                 if($y=='INF') $y = 1;
-
 
                 $pdf->SetFont('Arial','B'); 
                 $pdf->SetFontSize($size);
