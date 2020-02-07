@@ -74,7 +74,7 @@ $(function(){
 						autoadjust: 34,
 						x: 30,
 						y: 57.75,
-						width: 60
+						width: 70
 					},
 					{
 						name: 'importe',
@@ -126,7 +126,7 @@ $(function(){
 						lineheight: 2,
 						multiline: true,
 						align: 'C',
-						y: 33
+						y: 34
 					},
 					{
 						name:'curso',

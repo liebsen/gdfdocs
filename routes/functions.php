@@ -115,6 +115,10 @@ function doc2pdf($data, $output = NULL){
                 if($x=='INF') $x = 1;
                 if($y=='INF') $y = 1;
 
+                //if($autoadjust){
+                    //log2file($size);
+                //}
+                
                 $pdf->SetFont('Arial','B'); 
                 $pdf->SetFontSize($size);
                 $pdf->SetFontSpacing($spacing);
