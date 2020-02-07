@@ -79,8 +79,8 @@ $(function(){
 					{
 						name: 'importe',
 						title: 'Importe a bonificar',
-						placeholder: '€420',
-						value: '€420',
+						placeholder: '420€',
+						value: '420€',
 						maxlength: 10,
 						x: 37,
 						y: 60.55,
