@@ -157,12 +157,12 @@ $(function(){
 					{
 						name: 'accion',
 						title: 'Nro. acción del curso',
-						placeholder: '60',
+						placeholder: '6275',
 						value: '6275',
 						maxlength: 3,
 						x: 26.5,
 						y: 61.7,
-						width: 15
+						width: 20
 					},
 					{
 						name: 'grupo',
@@ -171,7 +171,7 @@ $(function(){
 						maxlength: 8,
 						x: 69,
 						y: 61.7,
-						width: 15
+						width: 20
 					},
 					{
 						name: 'ciudad',
@@ -285,7 +285,15 @@ $(function(){
 						name:'importe2',
 						title: 'Importe del cargo',
 						ref: 'importe',
+						disabled: false,
 						x: 24,
+						y: 91.3,
+						width: 20
+					},
+					{
+						name:'importe3',
+						title: 'Importe recurrente del cargo',
+						x: 47,
 						y: 91.3,
 						width: 20
 					}
@@ -369,7 +377,9 @@ $(function(){
 						}
 					}
 					placeholder = `{${item.ref} p${pageno}}`
-					disabled = true
+					if(item.disabled!==false){
+						disabled = true
+					}
 				}
 
 				if(item.calendar){
