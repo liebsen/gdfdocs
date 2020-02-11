@@ -125,7 +125,7 @@ body, button, input, select, textarea {
 	border-width:4px;
 	border-color: transparent;
 	box-shadow: none;
-	background-color: transparent;
+	background-color: whitesmoke;
 }
 
 #pdf-contents .page select{
@@ -134,7 +134,6 @@ body, button, input, select, textarea {
 #pdf-contents .page input:hover, 
 #pdf-contents .page select:hover,
 #pdf-contents .page textarea:hover {
-	background-color: inherit;
 	border-color: #4f81bd;
 	box-shadow: inherit;
 }

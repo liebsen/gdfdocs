@@ -244,7 +244,7 @@ $(function(){
 						regrep: "$1 $2 $3 $4 $5",
 						maxlength: 26, 
 						x: 15.5,
-						y: 79.15,
+						y: 79.45,
 						width: 90,
 						size: 25,
 						spacing: 12.45
@@ -448,6 +448,8 @@ $(function(){
 						n = n.split(' ').join('')
 						n = n.replace(item.regexp, item.regrep)
 						n = n.split('  ').join('')
+						if(item.maxlength)
+						n = n.substring(0,item.maxlength)
 						$(e.target).val(n)
 					})
 				}
@@ -639,6 +641,11 @@ $(function(){
 	          swal('Error al generar documento',"Por favor intente nuevamente en unos instantes.")
 	        }
 	    })
+	})
+	
+	$(document).on('click','.page input,.page select,.page textarea',function(e) {
+		$('.page input,.page select,.page textarea').css('z-index','inherit')
+		$(this).css('z-index',10)
 	})
 
 	$(document).keydown(function(e) {
