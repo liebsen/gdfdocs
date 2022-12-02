@@ -3,7 +3,7 @@ $(function(){
 	var __PDF_DOC,
 		__CALENDAR_MONTH = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
 		__CALENDAR_DAY = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-		__CALENDAR_YEAR = [2020,2021,2022],
+		__CALENDAR_YEAR = [2020,2021,2022,2023,2024,2025,2026],
 		__TIPO_FORMACION = ['Distancia','Teleformación','Mixta'],
 		__TIPO_PAGO = ['Único','Recurrente'],
 		__CURRENT_PAGE,
@@ -159,7 +159,7 @@ $(function(){
 						title: 'Nro. acción del curso',
 						placeholder: '6275',
 						value: '6275',
-						maxlength: 3,
+						maxlength: 4,
 						x: 26.5,
 						y: 61.7,
 						width: 20
